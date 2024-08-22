@@ -15,16 +15,10 @@ source = SlingConnectionResource(
 )
 
 target = SlingConnectionResource(
-    name="AW_SF",
-    type="snowflake",
-    host=EnvVar("SF_HOST"),
-    database=EnvVar("SF_DATABASE"),
-    user=EnvVar("SF_USER"),
-    password=EnvVar("SF_PASSWORD"),
-    private_key_path=EnvVar("SF_P8_KEY_PATH"),
-    schema=EnvVar("SF_SCHEMA"),
-    role=EnvVar("SF_ROLE"),
-    warehouse=EnvVar("SF_WAREHOUSE"),
+    name="AW_MD",
+    type="motherduck",
+    database=EnvVar("MD_DATABASE"),
+    motherduck_token=EnvVar("MD_TOKEN")
 )
 
 sling = SlingResource(

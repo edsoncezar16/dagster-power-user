@@ -1,13 +1,9 @@
-from dlt.destinations import snowflake
+from dlt.destinations import motherduck
 import os
 
-snowflake_credentials = {
-    "database": os.getenv("SF_DATABASE"),
-    "password": os.getenv("SF_PASSWORD"),
-    "username": os.getenv("SF_USERNAME"),
-    "host": os.getenv("SF_HOST"),
-    "warehouse": os.getenv("SF_WAREHOUSE"),
-    "role": os.getenv("SF_ROLE"),
+motherduck_credentials = {
+    "database": os.getenv("MD_DATABASE"),
+    "password": os.getenv("MD_TOKEN"),
 }
 
-aw_snowflake = snowflake(credentials=snowflake_credentials)
+aw_motherduck = motherduck(credentials=motherduck_credentials)

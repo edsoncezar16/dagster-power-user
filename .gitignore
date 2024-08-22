@@ -210,5 +210,3 @@ terraform.rc
 **/.terraform.lock.hcl
 **/tfplan
 
-# Snowflake Private Key File
-**/rsa_key.p8

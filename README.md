@@ -26,6 +26,8 @@ dagster dev -m definitions -d el_code_location
 - For visualizing the dbt assets, run:
 
 ```bash
+while read line; do export $line; done<.env
+cd dbt_code_location/dbt_project && dbt deps && cd ../../
 dagster dev -m definitions -d dbt_code_location
 ```
 
@@ -35,8 +37,6 @@ dagster dev -m definitions -d dbt_code_location
 ## Deployment
 
 - Installs: [Terraform, AWS CLI, Docker]
-- Create the files `<el|dbt>_code_location/rsa_key.p8` following the [Snowflake Guide to Private Key Auth](https://docs.snowflake.com/en/user-guide/key-pair-auth). **We are not using a passphrase to encrypt the key file for simplicity in this demo, but of course you should do it if you use this auth method in production.**
-- Create a `.env` file based on `.env.example`
 - Create a `terraform.tfvars` file based on `infra/terraform.tfvars.example`
 - Run `chmod -R +x scripts`
 - If needed, setup an appropriate bucket and region to store terraform state in the `config.s3.tfbackend` file. Then, do one of the following before apply new terraform plans:

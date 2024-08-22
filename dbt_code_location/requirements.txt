@@ -1,5 +1,5 @@
 dagster-postgres
 dagster-aws
 dagster-dbt
-dbt-snowflake
+dbt-duckdb
 dbt-core

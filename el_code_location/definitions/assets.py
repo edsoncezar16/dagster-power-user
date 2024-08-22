@@ -15,7 +15,7 @@ from dagster import (
 
 from dlt import pipeline
 from dlt_config.source import worldbank
-from dlt_config.destination import aw_snowflake
+from dlt_config.destination import aw_motherduck
 
 from .translators import CustomDagsterSlingTranslator, CustomDagsterDltTranslator
 from .partitions import aw_partitions_def, worldbank_partitions_def
@@ -51,7 +51,7 @@ def aw_assets(context: AssetExecutionContext, sling: SlingResource):
     dlt_pipeline=pipeline(
         pipeline_name="worldbank_ingestion",
         dataset_name="main",
-        destination=aw_snowflake,
+        destination=aw_motherduck,
     ),
     name="worldbank_ingestion",
     group_name="raw_dlt",

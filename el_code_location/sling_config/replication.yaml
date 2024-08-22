@@ -1,5 +1,5 @@
 source: AW_S3
-target: AW_SF
+target: AW_MD
 defaults:
     mode: backfill
     object: "target_schema.stream_file_folder_stream_file_name"
